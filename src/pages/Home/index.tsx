@@ -1,39 +1,23 @@
-import preactLogo from '../../assets/preact.svg';
+import fistLogo from '../../assets/FIST Logo.png';
 import './style.css';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import * as React from 'react';
+import Button from '@mui/material/Button';
+
+import KIAButton from '../../components/KIAButton/KIAButton';
+import { Grid } from '@mui/material';
 
 export function Home() {
 	return (
 		<div class="home">
-			<a href="https://preactjs.com" target="_blank">
-				<img src={preactLogo} alt="Preact logo" height="160" width="160" />
-			</a>
-			<h1>Get Started building Vite-powered Preact Apps </h1>
-			<section>
-				<Resource
-					title="Learn Preact"
-					description="If you're new to Preact, try the interactive tutorial to learn important concepts"
-					href="https://preactjs.com/tutorial"
-				/>
-				<Resource
-					title="Differences to React"
-					description="If you're coming from React, you may want to check out our docs to see where Preact differs"
-					href="https://preactjs.com/guide/v10/differences-to-react"
-				/>
-				<Resource
-					title="Learn Vite"
-					description="To learn more about Vite and how you can customize it to fit your needs, take a look at their excellent documentation"
-					href="https://vitejs.dev"
-				/>
-			</section>
+			<Grid container>
+				<Grid item xs={12}>
+					<KIAButton onClick={() => {console.log("Clicked!")}}/>
+				</Grid>
+			</Grid>
 		</div>
-	);
-}
-
-function Resource(props) {
-	return (
-		<a href={props.href} target="_blank" class="resource">
-			<h2>{props.title}</h2>
-			<p>{props.description}</p>
-		</a>
 	);
 }
