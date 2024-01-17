@@ -5,7 +5,7 @@ import { nouns } from "../data/nouns";
 import { surnames } from "../data/surnames";
 
 // problematic
-enum Gender {
+export enum Gender {
   masc = "Man",
   femme = "Woman",
   enlightened = "Person",
@@ -29,7 +29,7 @@ export default function getName(opts?: {
     : generateRegularName(gender, manSuffix);
 }
 
-function pickGender() {
+export function pickGender() {
   const p = Math.random();
   if (p < 0.3) return Gender.masc;
   else if (p < 0.6) return Gender.femme;
