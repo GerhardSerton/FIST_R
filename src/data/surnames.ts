@@ -59,4 +59,5 @@ export const surnames = [
   "Ndlovu",
   "Okafor",
   "Mwangi",
+  "Lecter",
 ];

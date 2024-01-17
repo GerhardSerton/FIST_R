@@ -6,7 +6,8 @@ export const mascNames = [
   "Silus",
   "Hugo",
   "Arlo",
-  "Oliver"
+  "Oliver",
+  "Hannibal"
 ];
 
 export const femmeNames = [
