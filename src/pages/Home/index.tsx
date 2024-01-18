@@ -10,10 +10,12 @@ import Button from '@mui/material/Button';
 import KIAButton from '../../components/KIAButton/KIAButton';
 import { Grid } from '@mui/material';
 import SheetSections from '../../components/SheetSections/SheetSections';
+import Barcode from '../../components/Barcode/Barcode';
 
 export function Home() {
 	return (
 		<div class="home">
+			<Barcode/>
 			<Grid container>
 				<Grid item xs={12}>
 						<KIAButton onClick={() => {console.log("Clicked!")}}/>

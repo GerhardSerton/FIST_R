@@ -1,0 +1,4 @@
+.barcode {
+    font-family: 'Libre Barcode 39 Text';
+    transform: rotate(-90deg);
+}
