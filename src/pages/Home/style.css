@@ -1,9 +1,24 @@
+.home {
+	display: flex;
+	flex-grow: 1;
+}
+
 .home section {
 	margin-top: 5rem;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	column-gap: 1.5rem;
 	max-height: 20em;
+}
+
+.sideLogoItem {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.sideLogo {
+	width: auto !important
 }
 
 .container {

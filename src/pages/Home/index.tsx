@@ -15,7 +15,12 @@ import Barcode from '../../components/Barcode/Barcode';
 export function Home() {
 	return (
 		<div class="home">
-			<Barcode/>
+			<Grid container className='sideLogo'>
+				<Grid direction={'column'} xs={12} className='sideLogoItem'>
+					<Barcode/>
+				</Grid>
+			</Grid>
+			<div>
 			<Grid container>
 				<Grid item xs={12}>
 						<KIAButton onClick={() => {console.log("Clicked!")}}/>
@@ -32,6 +37,7 @@ export function Home() {
 					<SheetSections title='Traits' long={true}/>
 				</Grid>
 			</Grid>
+			</div>
 		</div>
 	);
 }
