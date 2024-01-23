@@ -13,12 +13,16 @@ import SheetSections from "../../components/SheetSections/SheetSections";
 import Barcode from "../../components/Barcode/Barcode";
 import generateCharacter from "../../logic/characterGenerator";
 import Character, { Role, Trait } from "../../types/character";
-import { CharacterContext } from "../../components/Context/CharacterContext";
+import { CharacterContext, ICharacterContext } from "../../components/Context/CharacterContext";
 
 export function Home() {
   const [charState, setCharState] = useState<Character>(undefined);
   const [data, setData] = useState<{ roles: Role[]; traits: Trait[] }>(undefined);
   const isReady = useMemo(() => !!charState && !!data, [charState, data]);
+  const charProvider = useMemo<ICharacterContext>(
+    () => ({ character: charState, setCharacter: setCharState }),
+    [charState]
+  );
   useEffect(() => {
     const fetchAndLoad = async () => {
       try {
@@ -49,7 +53,7 @@ export function Home() {
   }, [charState]);
 
   return (
-    <CharacterContext.Provider value={charState}>
+    <CharacterContext.Provider value={charProvider}>
       <div class="home">
         <Grid container className="sideLogo">
           <Grid direction={"column"} xs={12} className="sideLogoItem">
