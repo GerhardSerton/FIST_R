@@ -1,0 +1,9 @@
+.barcode {
+    font-family: 'Libre Barcode 39 Text';
+    transform: rotate(-90deg);
+}
+
+.header {
+    font-size: 13vh;
+    margin: 0;
+}

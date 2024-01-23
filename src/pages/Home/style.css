@@ -1,9 +1,6 @@
-img {
-	margin-bottom: 1.5rem;
-}
-
-img:hover {
-	filter: drop-shadow(0 0 2em #673ab8aa);
+.home {
+	display: flex;
+	flex-grow: 1;
 }
 
 .home section {
@@ -11,6 +8,30 @@ img:hover {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	column-gap: 1.5rem;
+	max-height: 20em;
+}
+
+.sideLogoItem {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.sideLogo {
+	width: auto !important
+}
+
+.container {
+	max-height: 90em;
+	flex-wrap: wrap !important;
+}
+
+.sector {
+	padding: 0.8em 0.8em
+}
+
+.sector.traits {
+	flex-grow: 1;
 }
 
 .resource {
