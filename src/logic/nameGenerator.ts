@@ -16,10 +16,7 @@ enum NameType {
   noun,
 }
 
-export default function getName(opts?: {
-  gender?: Gender;
-  manSuffix?: boolean;
-}) {
+export default function getName(opts?: { gender?: Gender; manSuffix?: boolean }) {
   const gender = opts?.gender ?? pickGender();
   // default 1% chance for "-man" suffix
   const manSuffix = opts?.manSuffix ?? Math.random() < 0.01;

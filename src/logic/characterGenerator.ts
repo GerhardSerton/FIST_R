@@ -11,8 +11,10 @@ export default function generateCharacter(rolesData: Role[], traitsData: Trait[]
   const roleN = d66();
   const role = rolesData.find((r) => r.Number === roleN);
 
-  // TODO: Ensure you don't roll the same number twice
-  const [trait1, trait2] = [d666(), d666()];
+  let [trait1, trait2] = [d666(), d666()];
+  while (trait1 === trait2) {
+    trait2 = d666();
+  }
   const traits = [
     traitsData.find((t) => t.Number === trait1),
     traitsData.find((t) => t.Number === trait2),
@@ -23,7 +25,7 @@ export default function generateCharacter(rolesData: Role[], traitsData: Trait[]
     tactical: traits.reduce((v, t) => v + getAttributeModifier(t.Stat, "tactical"), 0),
     creative: traits.reduce((v, t) => v + getAttributeModifier(t.Stat, "creative"), 0),
     reflexive: traits.reduce((v, t) => v + getAttributeModifier(t.Stat, "reflexive"), 0),
-  }
+  };
 
   let hp: number = 6;
   hp += traits.reduce((v, t) => v + getHPModifier(t.Stat), 0);
@@ -46,7 +48,7 @@ export default function generateCharacter(rolesData: Role[], traitsData: Trait[]
     maxHp: hp,
     inventory,
     armor,
-    warDice
+    warDice,
   };
 }
 
