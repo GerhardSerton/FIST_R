@@ -1,255 +1,369 @@
 [
   {
-	  "Number": 111,
+    "Number": 111,
     "Name": "ACCOUNTANT",
-    "Effect": "Financial number-crunching is your raison d'\u00eatre. You may identify inconsistencies in ledgers without rolling the dice, and you can always spot a counterfeit bill. Once per mission, you may ask the referee where and how a given entity is spending its money, and receive an honest answer (including offshore accounts, tax write-offs, and employee embezzlement). If you notice and correct an inconsistency in your FIST game, like lost HP that was never marked or a WAR DIE someone forgot they had, gain a WAR DIE.",
-    "Item": "Coffee thermos (+1D6 HP, one use)",
-    "Stat": "-2 CREATIVE"
+    "Effect": {
+      "Text": "Financial number-crunching is your raison d'\u00eatre. You may identify inconsistencies in ledgers without rolling the dice, and you can always spot a counterfeit bill. Once per mission, you may ask the referee where and how a given entity is spending its money, and receive an honest answer (including offshore accounts, tax write-offs, and employee embezzlement). If you notice and correct an inconsistency in your FIST game, like lost HP that was never marked or a WAR DIE someone forgot they had, gain a WAR DIE.",
+      "Charges": 1,
+      "Recharge": "mission"
+    },
+    "Item": {
+      "Text": "Coffee thermos (+1d6 HP, one use)",
+      "Charges": 1,
+      "Heal": "1d6"
+    },
+    "Creative": -2
   },
   {
     "Number": 112,
     "Name": "ACE",
     "Effect": "You can do tricky vehicular maneuvers, like drifting or doing a barrel roll, without rolling the dice. If it's something really difficult, like flying sideways through a small opening or riding a motorcycle across a tightrope, you can do it, but a key component of your vehicle will be destroyed\u2014the referee will tell you what. When you have downtime to repair it, you can use it again.",
     "Item": "Fuzzy dice (gives any vehicle +2 MAX HP)",
-    "Stat": "+1 REFLEXIVE"
+    "Reflexive": 1
   },
   {
     "Number": 113,
     "Name": "ACHILLES",
     "Effect": "In exchange for great power, you have a terrible weakness to a common substance, such as salt, iron, or silver. It could also be something considered uncommon (like a specific mineral from space), but the referee will make sure it appears often enough to be a problem. If this substance physically touches you, you are completely incapacitated until you have downtime to receive medical care.",
     "Item": "Substance detector (pings on proximity)",
-    "Stat": "+6 MAX HP"
+    "MaxHP": 6
   },
   {
     "Number": 114,
     "Name": "AIMBOT",
     "Effect": "You  can only attack one target at a time. You are unable to engage another until your target has either left your line of sight or died. While attacking your target, partial successes become full ones.",
-    "Item": "Hand cannon (1D6+1 DAMAGE)",
-    "Stat": "-1 TACTICAL"
+    "Item": {
+      "Text": "Hand cannon (1D6+1 DAMAGE)",
+      "Damage": "1d6+1"
+    },
+    "Tactical": -1
   },
   {
     "Number": 115,
     "Name": "AKIMBO",
     "Effect": "You can wield any two weapons at once, but your accuracy is decreased: when an attack lands, roll DAMAGE for both weapons, then drop one die from the total.",
-    "Item": "Two SMGs (1D6 DAMAGE each)",
-    "Stat": "+1 FORCEFUL"
+    "Item": [
+      {
+        "Text": "SMG (1D6 DAMAGE)",
+        "Damage": "1d6"
+      },
+      {
+        "Text": "SMG (1D6 DAMAGE)",
+        "Damage": "1d6"
+      }
+    ],
+    "Forceful": 1
   },
   {
     "Number": 116,
     "Name": "AMATEUR",
     "Effect": "You have no formalized military training. Civilians always listen to you and tend to trust you, but you can never pass as a soldier.",
-    "Item": "Civilian outfit (0 ARMOR, blend into crowds)",
-    "Stat": "-1 FORCEFUL"
+    "Item": {
+      "Text": "Civilian outfit (0 ARMOR, blend into crowds)",
+      "Armor": 0
+    },
+    "Forceful": -1
   },
   {
     "Number": 121,
     "Name": "ANALYST",
     "Effect": "You are trained in the art of war, and your judgment in the field of combat analysis is impeccable. When a fight breaks out, you may always ask the referee for any nearby exits, as well as what tactics your enemies plan to use (e.g. flanking, a bum rush, or picking off the weak), and receive an honest answer.",
-    "Item": "Bolt-action rifle (1D6+1 DAMAGE)",
-    "Stat": "+2 TACTICAL"
+    "Item": {
+      "Text": "Bolt-action rifle (1D6+1 DAMAGE)",
+      "Damage": "1d6+1"
+    },
+    "Tactical": 2
   },
   {
     "Number": 122,
     "Name": "ANIMUS",
-    "Effect": "Your touch grants sapience. Once per mission, you may touch an object or animal to give it human intelligence, movement and speech. Those you \"awaken\" in this way are under no obligation to take it well.",
+    "Effect": {
+      "Text": "Your touch grants sapience. Once per mission, you may touch an object or animal to give it human intelligence, movement and speech. Those you \"awaken\" in this way are under no obligation to take it well.",
+      "Charges": 1,
+      "Recharge": "mission"
+    },
     "Item": "Lighter (your longtime companion)",
-    "Stat": "+1 CREATIVE"
+    "Creative": 1
   },
   {
     "Number": 123,
     "Name": "AQUATIC",
     "Effect": "You're a water-breather\u2014perhaps due to spliced-on fish genes or cybernetic gills\u2014and you may stay submerged indefinitely with no ill effects. When you roll the dice to do something risky underwater, roll 3D6 and take the best two. On land, roll 3D6 and take the worst two.",
-    "Item": "Heavy harpoon launcher (1D6+2 DAMAGE)",
-    "Stat": "+1 FORCEFUL"
+    "Item": {
+      "Text": "Heavy harpoon launcher (1D6+2 DAMAGE)",
+      "Damage": "1d6+2"
+    },
+    "Forceful": 1
   },
   {
     "Number": 124,
     "Name": "ARMORED",
-    "Effect": "You are fused with a cumbersome suit of power armor that you cannot remove. Once per mission, you can completely ignore any amount of DAMAGE dealt to you.",
-    "Item": "Power armor (2 ARMOR, cannot be unequipped)",
-    "Stat": "-2 REFLEXIVE"
+    "Effect": {
+      "Text": "You are fused with a cumbersome suit of power armor that you cannot remove. Once per mission, you can completely ignore any amount of DAMAGE dealt to you.",
+      "Charges": 1,
+      "Recharge": "mission"
+    },
+    "Item": {
+      "Text": "Power armor (2 ARMOR, cannot be unequipped)",
+      "Armor": 2
+    },
+    "Reflexive": -2
   },
   {
     "Number": 125,
     "Name": "ARTIST",
     "Effect": "If you have a reasonable amount of time and complete safety, you can create something with your art supplies and it will become real until the end of the mission.",
-    "Item": "Art supplies (one use)",
-    "Stat": "+2 CREATIVE"
+    "Item": {
+      "Text": "Art supplies (one use)",
+      "Charges": 1
+    },
+    "Creative": 2
   },
   {
     "Number": 126,
     "Name": "ASSASSINATION",
-    "Effect": "Once per mission, you may instantly kill up to three weak enemies (3 HP or less) who are completely unaware of your presence, without rolling the dice. If you do not have a way of measuring an enemy's HP, you may have to gauge their condition based upon referee description.",
-    "Item": "Wrist blade (3 DAMAGE, does not count as equipped)",
-    "Stat": "+1 REFLEXIVE"
+    "Effect": {
+      "Text": "Once per mission, you may instantly kill up to three weak enemies (3 HP or less) who are completely unaware of your presence, without rolling the dice. If you do not have a way of measuring an enemy's HP, you may have to gauge their condition based upon referee description.",
+      "Charges": 1,
+      "Recharge": "mission"
+    },
+    "Item": {
+      "Text": "Wrist blade (3 DAMAGE, does not count as equipped)",
+      "Damage": 3
+    },
+    "Reflexive": 1
   },
   {
     "Number": 131,
     "Name": "ASTRONAUT",
     "Effect": "You have been to (or are from) outer space. When you would roll the dice to do something risky which involves aliens, spaceships, airless environments, or irregular gravity, roll 3D6 and take the best two.",
-    "Item": "Space suit (1 ARMOR, constant oxygen supply)",
-    "Stat": "-1 REFLEXIVE"
+    "Item": {
+      "Text": "Space suit (1 ARMOR, constant oxygen supply)",
+      "Armor": 1
+    },
+    "Reflexive": -1
   },
   {
     "Number": 132,
     "Name": "ATMOKINESIS",
-    "Effect": "You can always change the weather within a mile of you. Once per mission, you can make it something particularly severe/dangerous (tornadoes, extreme heat, freezing blizzards, etc.) Once changed, it's difficult to undo.",
-    "Item": "Lightning grenade (1D6 DAMAGE, one use)",
-    "Stat": "-1 TACTICAL"
+    "Effect": {
+      "Text": "You can always change the weather within a mile of you. Once per mission, you can make it something particularly severe/dangerous (tornadoes, extreme heat, freezing blizzards, etc.) Once changed, it's difficult to undo.",
+      "Charges": 1,
+      "Recharge": "mission"
+    },
+    "Item": {
+      "Text": "Lightning grenade (1D6 DAMAGE, one use)",
+      "Damage": "1d6",
+      "Charges": 1
+    },
+    "Tactical": -1
   },
   {
     "Number": 133,
     "Name": "AURA",
     "Effect": "You can perceive the auras of yourself and others; their qualities are up to your interpretation. You may also regulate and amplify your aura to conduct it between bodies\u2014while doing so, NPCs who are touching you won't CHOKE, and anyone who remains in constant physical contact with you for about ten minutes regains 1D6 HP.",
-    "Item": "Psionic grenade (scrambles emotions, one use)",
-    "Stat": "+1 FORCEFUL"
+    "Item": {
+      "Text": "Psionic grenade (scrambles emotions, one use)",
+      "Charges": 1
+    },
+    "Forceful": 1
   },
   {
     "Number": 134,
     "Name": "BERSERKER",
     "Effect": "For you, there are no tactics\u2014only the thrill of battle. If you rush into combat with no precaution or pre-planning, your first attack will deal double DAMAGE.",
-    "Item": "Minigun (1D6+2 DAMAGE)",
-    "Stat": "-2 TACTICAL"
+    "Item": {
+      "Text": "Minigun (1D6+2 DAMAGE)",
+      "Damage": "1d6+2"
+    },
+    "Tactical": -2
   },
   {
     "Number": 135,
     "Name": "BOMBER",
     "Effect": "If you have a reasonable amount of prep time, you can use your bomb kit and attempt to destroy any structure by rolling +TACTICAL. You may also spend a WAR DIE at any time to create a small, throwable explosive that deals 1D6 DAMAGE.",
-    "Item": "Bomb kit (one use)",
-    "Stat": "+1 TACTICAL"
+    "Item": {
+      "Text": "Bomb kit (one use)",
+      "Charges": 1
+    },
+    "Tactical": 1
   },
   {
     "Number": 136,
     "Name": "BOTTLENECK",
     "Effect": "If you put yourself between something you are defending and a large amount of enemies, you deal +1 DAMAGE per 5 enemies attempting to harm you for as long as you hold your position. You may sacrifice yourself to ensure that an oncoming horde does not pass.",
-    "Item": "Antique shortsword (1D6+1 DAMAGE)",
-    "Stat": "-1 TACTICAL"
+    "Item": {
+      "Text": "Antique shortsword (1D6+1 DAMAGE)",
+      "Damage": "1d6+1"
+    },
+    "Tactical": -1
   },
   {
     "Number": 141,
     "Name": "BOUNCE",
     "Effect": "When you deal damage to an enemy in melee combat, they are tossed 1D6 \u00d7 10 feet with enough force to knock them clear through a wall (though this deals no additional DAMAGE).",
-    "Item": "Kinetic gauntlet (1D6 DAMAGE)",
-    "Stat": "+1 FORCEFUL"
+    "Item": {
+      "Text": "Kinetic gauntlet (1D6 DAMAGE)",
+      "Damage": "1d6"
+    },
+    "Forceful": 1
   },
   {
     "Number": 142,
     "Name": "BREAKDOWN",
     "Effect": "A directive burns in the back of your mind. When you take this trait, randomly roll a **CHOKE score** for your character (D66, p. 148)\u2014and roll against it when appropriate, as the ref would with an NPC. If you CHOKE, you must either perform the listed action immediately or release a psionic shockwave from your skull, ten feet in diameter with the concussive force of a frag grenade. This shockwave deals 1D6+2 DAMAGE to everyone caught inside (not including yourself) and, if you spend a WAR DIE, additionally functions as a short-range EMP burst which shorts out power lines, burns out lights, and disables electronics.",
-    "Item": "Needle gun (1D6+1 DAMAGE)",
-    "Stat": "-1 TACTICAL"
+    "Item": {
+      "Text": "Needle gun (1D6+1 DAMAGE)",
+      "Damage": "1d6+1"
+    },
+    "Tactical": -1
   },
   {
     "Number": 143,
     "Name": "BUDDY",
     "Effect": "You and another player who possesses the BUDDY trait are best friends. When you work together, you become an unstoppable force of nature, adding +1 whenever you apply a WAR DIE to your buddy's roll. If your buddy dies, your MAX HP is halved by grief (rounded down) until you dedicate a mission to delivering a special possession, such as their gun, their dog tags, or their favorite book, to a proper final resting place.",
     "Item": "Friendship bracelet (matches another)",
-    "Stat": "+2 FORCEFUL"
+    "Forceful": 2
   },
   {
     "Number": 144,
     "Name": "BUILDER",
     "Effect": "Given enough time, the right materials, and relative safety, you can build any common structure (guaranteed to be sound, sturdy, and reliable) without rolling the dice. You build things simple, solid, and square, so special structures and rush jobs will have complications\u2014the referee will tell you what.",
-    "Item": "Tool belt (produce any hardware store tool, one use)",
-    "Stat": "-1 CREATIVE"
+    "Item": {
+      "Text": "Tool belt (produce any hardware store tool, one use)",
+      "Charges": "1"
+    },
+    "Creative": -1
   },
   {
     "Number": 145,
     "Name": "BUM",
     "Effect": "Years of homelessness have been harsh on your bones, but you are skilled in the art of survival sans income and shelter. You may roll the dice +CREATIVE to panhandle in the presence of enemies\u2014on a success, at least one enemy will give you something they have, free of charge. Those who ignore poor and homeless people will never notice you, even if you're hiding in plain sight.",
     "Item": "Shabby coat (new Item (p. 85) in pocket each mission)",
-    "Stat": "-1 FORCEFUL"
+    "todo": true,
+    "Forceful": -1
   },
   {
     "Number": 146,
     "Name": "CAMOUFLAGE",
     "Effect": "You have an impressive collection of face paints and situationally-appropriate patterned fatigues, and you know how to use them. When you begin a mission, describe your current camo pattern, such as \"desert\", \"forest\", \"jungle\", or \"urban\". Take +1 to your roll whenever you roll to avoid detection in the corresponding environment.",
     "Item": "Camouflage fatigues (multiple patterns)",
-    "Stat": "+2 REFLEXIVE"
+    "Reflexive": 2
   },
   {
     "Number": 151,
     "Name": "CANNIBAL",
     "Effect": "Your power grows when you feast upon human flesh. When you have privacy, you may dine upon any corpse and gain 1D6 HP. If you imply to someone that you're going to eat them, roll 1D6\u2014if the result is less than or equal to the amount of people you've eaten during this mission, they lose their nerve and capitulate or flee (referee's choice).",
-    "Item": "Chainsaw (1D6+1 DAMAGE)",
-    "Stat": "-2 CREATIVE"
+    "Item": {
+      "Text": "Chainsaw (1D6+1 DAMAGE)",
+      "Damage": "1d6+1"
+    },
+    "Creative": -2
   },
   {
     "Number": 152,
     "Name": "CENTIPEDE",
     "Effect": "You have a worm-like parasite living inside you. You may roll +FORCEFUL to bite someone. On a success, the parasite travels through your mouth and latches on, controlling their body. The parasite may then travel through the secondary body, and so on, creating a \"chain\" of bodies. For each body you add to the chain, gain their HP and any special abilities they have, but take a cumulative -1 penalty to REFLEXIVE. You may release a body from the end of the chain at any time; they quickly regain control.",
     "Item": "Muzzle (contains the centipede, accessory)",
-    "Stat": "+1 FORCEFUL"
+    "Forceful": 1
   },
   {
     "Number": 153,
     "Name": "CHAMPION",
     "Effect": "You live for the righteous thrill of triumph. When you are the only one to survive a fight, immediately gain 2D6 MAX HP and fully heal.",
-    "Item": "Spear (1D6+1 DAMAGE)",
-    "Stat": "+1 FORCEFUL"
+    "Item": {
+      "Text": "Spear (1D6+1 DAMAGE)",
+      "Damage": "1d6+1"
+    },
+    "Forceful": 1
   },
   {
     "Number": 154,
     "Name": "CHARM",
     "Effect": "You can always manipulate people into doing what you want without rolling the dice, but you will have to make a significant sacrifice or maintain a difficult lie\u2014the referee will tell you how.",
-    "Item": "Combat tuxedo (1 ARMOR)",
-    "Stat": "+1 CREATIVE"
+    "Item": {
+      "Text": "Combat tuxedo (1 ARMOR)",
+      "Armor": 1
+    },
+    "Creative": 1
   },
   {
     "Number": 155,
     "Name": "CHEF",
     "Effect": "You can cook a good meal in almost any situation without rolling the dice. When you need to cook an exquisite meal, roll +CREATIVE and choose one of the following effects on a partial success, or two on a full success: grants +1 to any attribute for one roll, heals 1D6+CRE HP, pacifies and nourishes those who eat it.",
-    "Item": "Meat cleaver (1D6 DAMAGE)",
-    "Stat": "+1 WAR DIE per mission"
+    "Item": {
+      "Text": "Meat cleaver (1D6 DAMAGE)",
+      "Damage": "1d6"
+    },
+    "WarDice": 1
   },
   {
     "Number": 156,
     "Name": "CHEMIST",
     "Effect": "If you have a reasonable amount of prep time and complete safety, you can set up your portable lab and synthesize any common chemical, such as isopropyl alcohol, lighter fluid, or chloroform. Synthesizing esoteric or experimental compounds will require special supplies\u2014the referee will tell you what.",
-    "Item": "Portable lab (three uses)",
-    "Stat": "+1 TACTICAL"
+    "Item": {
+      "Text": "Portable lab (three uses)",
+      "Charges": 3
+    },
+    "Tactical": 1
   },
   {
     "Number": 161,
     "Name": "CLASSY",
     "Effect": "You are well-versed in the aesthetics, logistics, and mores of high society. Your name always ends up on VIP lists, and rich socialites tend to share gossip with you freely. Lower-class people will never trust you, and you struggle to hide the sticky psychic stench of wealth.",
-    "Item": "Diamond jewelry (quietly bribe someone, one use)",
-    "Stat": "+1 CREATIVE"
+    "Item": {
+      "Text": "Diamond jewelry (quietly bribe someone, one use)",
+      "Charges": 1
+    },
+    "Creative": 1
   },
   {
     "Number": 162,
     "Name": "CLIMBER",
     "Effect": "You can climb surfaces with hand- and footholds without rolling the dice, and stick to smooth surfaces by rolling +REFLEXIVE. If you do so during a dangerous situation, you must roll +REFLEXIVE again to unstick yourself without falling or getting hurt.",
     "Item": "Grapple gun (50 feet of cable)",
-    "Stat": "+1 REFLEXIVE"
+    "Reflexive": 1
   },
   {
     "Number": 163,
     "Name": "COMMANDO",
     "Effect": "You're a real life action hero. You deal +1 DAMAGE during any solo fight where you are clearly outmatched, but take a -2 DAMAGE penalty when someone is fighting alongside you.",
-    "Item": "Rocket launcher (1D6+2 DAMAGE)",
-    "Stat": "+1 FORCEFUL"
+    "Item": {
+      "Text": "Rocket launcher (1D6+2 DAMAGE)",
+      "Damage": "1d6+2"
+    },
+    "Forceful": 1
   },
   {
     "Number": 164,
     "Name": "CONCEAL",
     "Effect": "You can always take weapons and contraband through pat-downs, checkpoints, and metal detectors without rolling the dice. Once per mission, if you have no weapon equipped and no weapons in your inventory, you may reveal a random **weapon** (roll D66 on the weapons table, p. 83) and say that you had it hidden away the whole time.",
-    "Item": "Leather trenchcoat (1 ARMOR)",
-    "Stat": "-1 REFLEXIVE"
+    "Item": {
+      "Text": "Leather trenchcoat (1 ARMOR)",
+      "Armor": 1
+    },
+    "todo": true,
+    "Reflexive": -1
   },
   {
     "Number": 165,
     "Name": "CONTORTIONIST",
     "Effect": "You can always fit through small openings and perform feats of flexibility without rolling the dice. If you contort yourself in a particularly difficult way, you've pulled something\u2014decrease your REFLEXIVE attribute by 2 until the end of the mission.",
-    "Item": "Skin-tight suit (1 ARMOR)",
-    "Stat": "+1 REFLEXIVE"
+    "Item": {
+      "Text": "Skin-tight suit (1 ARMOR)",
+      "Armor": 1
+    },
+    "todo": true,
+    "Reflexive": 1
   },
   {
     "Number": 166,
     "Name": "CRUEL",
-    "Effect": "Merely shooting, burning, or stabbing someone is never enough for you\u2014without fail, you always double down and twist the knife. While dealing DAMAGE, you may reroll any dice which show up as 1.",
-    "Item": "Micro-blade stiletto (1D6+RFX DAMAGE)",
-    "Stat": "+1 DAMAGE vs. fleeing targets"
+    "Effect": "Merely shooting, burning, or stabbing someone is never enough for you\u2014without fail, you always double down and twist the knife. While dealing DAMAGE, you may reroll any dice which show up as 1. You also deal +1 DAMAGE vs. fleeing targets",
+    "Item": {
+      "Text": "Micro-blade stiletto (1D6+RFX DAMAGE)",
+      "Damage": "1d6+rfx"
+    }
   },
   {
     "Number": 211,
