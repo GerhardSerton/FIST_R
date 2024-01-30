@@ -14,6 +14,7 @@ import Barcode from "../../components/Barcode/Barcode";
 import generateCharacter from "../../logic/characterGenerator";
 import Character, { Role, Trait } from "../../types/character";
 import { CharacterContext, ICharacterContext } from "../../components/Context/CharacterContext";
+import Inventory from "../../components/Inventory/Inventory";
 
 export function Home() {
   const [charState, setCharState] = useState<Character>(undefined);
@@ -72,14 +73,20 @@ export function Home() {
             </Grid>
           </Grid>
           <Grid container direction={"column"} className="container">
-            <Grid item xs={"auto"} className="sector">
-              <SheetSections title="" long={false} />
+            <Grid item xs={"auto"} md={12} className="sector">
+              <SheetSections title="" long={false}>
+                "auto"
+              </SheetSections>
             </Grid>
-            <Grid item xs={"auto"} className="sector">
-              <SheetSections title="Inventory" long={false} />
+            <Grid item xs={"auto"} md={12} className="sector">
+              <SheetSections title="Inventory" long={false}>
+                <Inventory items={charState?.inventory ?? []} />
+              </SheetSections>
             </Grid>
-            <Grid item xs={6} className="sector traits">
-              <SheetSections title="Traits" long={true} />
+            <Grid item xs={6} md={12} className="sector traits">
+              <SheetSections title="Traits" long={true}>
+                "auto"
+              </SheetSections>
             </Grid>
           </Grid>
         </div>
