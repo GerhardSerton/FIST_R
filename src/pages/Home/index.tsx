@@ -60,7 +60,7 @@ export function Home() {
             <Barcode />
           </Grid>
         </Grid>
-        <div>
+        <div class="sector traits">
           <Grid container>
             <Grid item xs={12}>
               <KIAButton
@@ -72,10 +72,10 @@ export function Home() {
             </Grid>
           </Grid>
           <Grid container direction={"column"} className="container">
-            <Grid item xs={6} className="sector">
+            <Grid item xs={"auto"} className="sector">
               <SheetSections title="" long={false} />
             </Grid>
-            <Grid item xs={6} className="sector">
+            <Grid item xs={"auto"} className="sector">
               <SheetSections title="Inventory" long={false} />
             </Grid>
             <Grid item xs={6} className="sector traits">
