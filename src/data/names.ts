@@ -7,7 +7,8 @@ export const mascNames = [
   "Hugo",
   "Arlo",
   "Oliver",
-  "Hannibal"
+  "Hannibal",
+  "Peter",
 ];
 
 export const femmeNames = [
@@ -18,7 +19,7 @@ export const femmeNames = [
   "Maeve",
   "Evangeline",
   "Ophelia",
-  "Alice"
+  "Alice",
 ];
 
 export const names = [
@@ -30,5 +31,5 @@ export const names = [
   "Jessie",
   "Halo",
   "Ridley",
-  "Sawyer"
+  "Sawyer",
 ];
