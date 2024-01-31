@@ -2,3 +2,14 @@
   display: flex;
   flex-direction: column;
 }
+
+.traitName {
+}
+
+.traitEffect {
+  font-family: "Evolventa";
+}
+
+.traitItem {
+  font-family: "Evolventa";
+}

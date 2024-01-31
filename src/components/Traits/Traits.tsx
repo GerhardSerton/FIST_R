@@ -12,8 +12,7 @@ export default function Traits(props: TraitsProps) {
       <>
         <ListItem className={styles.itemList}>
           <div>{x.Name}</div>
-          <div>{x.Effect}</div>
-          <div>{x.Item}</div>
+          <div className={styles.traitEffect}>{x.Effect}</div>
         </ListItem>
       </>
     );
