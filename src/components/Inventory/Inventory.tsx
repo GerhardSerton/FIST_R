@@ -4,7 +4,7 @@ interface InventoryProps {
   items: Array<string> | undefined;
 }
 
-export default function KIAButton(props: InventoryProps) {
+export default function Inventory(props: InventoryProps) {
   const itemList = props.items.map((x) => {
     return (
       <>

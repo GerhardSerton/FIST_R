@@ -15,6 +15,7 @@ import generateCharacter from "../../logic/characterGenerator";
 import Character, { Role, Trait } from "../../types/character";
 import { CharacterContext, ICharacterContext } from "../../components/Context/CharacterContext";
 import Inventory from "../../components/Inventory/Inventory";
+import Traits from "../../components/Traits/Traits";
 
 export function Home() {
   const [charState, setCharState] = useState<Character>(undefined);
@@ -72,20 +73,24 @@ export function Home() {
               />
             </Grid>
           </Grid>
-          <Grid container direction={"column"} className="container">
-            <Grid item xs={"auto"} md={12} className="sector">
-              <SheetSections title="" long={false}>
-                "auto"
-              </SheetSections>
-            </Grid>
-            <Grid item xs={"auto"} md={12} className="sector">
-              <SheetSections title="Inventory" long={false}>
-                <Inventory items={charState?.inventory ?? []} />
-              </SheetSections>
+          <Grid container direction={"row"} className="container">
+            <Grid item xs={6} md={12}>
+              <Grid container direction={"column"} className="container">
+                <Grid item xs={5} md={12} className="sector">
+                  <SheetSections title="" long={false}>
+                    "auto"
+                  </SheetSections>
+                </Grid>
+                <Grid item xs={5} md={12} className="sector">
+                  <SheetSections title="Inventory" long={false}>
+                    <Inventory items={charState?.inventory ?? []} />
+                  </SheetSections>
+                </Grid>
+              </Grid>
             </Grid>
             <Grid item xs={6} md={12} className="sector traits">
               <SheetSections title="Traits" long={true}>
-                "auto"
+                <Traits items={charState?.traits ?? []} />
               </SheetSections>
             </Grid>
           </Grid>
