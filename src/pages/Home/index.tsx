@@ -74,9 +74,9 @@ export function Home() {
             </Grid>
           </Grid>
           <Grid container direction={"row"} className="container">
-            <Grid item xs={6} md={12}>
+            <Grid item xs={12} md={6}>
               <Grid container direction={"column"} className="container">
-                <Grid item xs={5} md={12} className="sector">
+                <Grid item xs={5} md={6} className="sector">
                   <SheetSections title="" long={false}>
                     "auto"
                   </SheetSections>
@@ -88,7 +88,7 @@ export function Home() {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={6} md={12} className="sector traits">
+            <Grid item xs={12} md={6} className="sector traits">
               <SheetSections title="Traits" long={true}>
                 <Traits items={charState?.traits ?? []} />
               </SheetSections>
