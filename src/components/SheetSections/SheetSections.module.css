@@ -1,20 +1,19 @@
 .border {
-    outline-style: solid;
-    outline-color: white;
-    outline-width: 3px;
+  outline-style: solid;
+  outline-color: white;
+  outline-width: 3px;
 
-    min-height: 30em;
-    min-width: 30em;
+  min-height: 30em;
+  min-width: 50%;
 
-    padding: 0.02em 2em;
-
+  padding: 0.02em 2em;
 }
 
 .border.long {
-    min-height: 61.6em
+  min-height: 61.6em;
 }
 
 .heading {
-    text-align: left;
-    font-family: 'Microgramma D Extended';
+  text-align: left;
+  font-family: "Microgramma D Extended";
 }

@@ -14,6 +14,8 @@ import Barcode from "../../components/Barcode/Barcode";
 import generateCharacter from "../../logic/characterGenerator";
 import Character, { Role, Trait } from "../../types/character";
 import { CharacterContext, ICharacterContext } from "../../components/Context/CharacterContext";
+import Inventory from "../../components/Inventory/Inventory";
+import Traits from "../../components/Traits/Traits";
 
 export function Home() {
   const [charState, setCharState] = useState<Character>(undefined);
@@ -60,7 +62,7 @@ export function Home() {
             <Barcode />
           </Grid>
         </Grid>
-        <div>
+        <div class="sector traits">
           <Grid container>
             <Grid item xs={12}>
               <KIAButton
@@ -71,15 +73,25 @@ export function Home() {
               />
             </Grid>
           </Grid>
-          <Grid container direction={"column"} className="container">
-            <Grid item xs={6} className="sector">
-              <SheetSections title="" long={false} />
+          <Grid container direction={"row"} className="container">
+            <Grid item xs={12} md={6}>
+              <Grid container direction={"column"} className="container">
+                <Grid item xs={5} md={6} className="sector">
+                  <SheetSections title="" long={false}>
+                    "auto"
+                  </SheetSections>
+                </Grid>
+                <Grid item xs={5} md={12} className="sector">
+                  <SheetSections title="Inventory" long={false}>
+                    <Inventory items={charState?.inventory ?? []} />
+                  </SheetSections>
+                </Grid>
+              </Grid>
             </Grid>
-            <Grid item xs={6} className="sector">
-              <SheetSections title="Inventory" long={false} />
-            </Grid>
-            <Grid item xs={6} className="sector traits">
-              <SheetSections title="Traits" long={true} />
+            <Grid item xs={12} md={6} className="sector traits">
+              <SheetSections title="Traits" long={true}>
+                <Traits items={charState?.traits ?? []} />
+              </SheetSections>
             </Grid>
           </Grid>
         </div>
