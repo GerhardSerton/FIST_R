@@ -1,5 +1,5 @@
-import Character, { Attributes, Role, Trait } from "../types/character";
-import { d6, d66, d666 } from "./diceRoller";
+import Character, { Attributes, Item, Role, Trait } from "../types/character";
+import { d66, d666, d6n } from "./diceRoller";
 import getName, { Gender, pickGender } from "./nameGenerator";
 
 export default function generateCharacter(rolesData: Role[], traitsData: Trait[]): Character {
@@ -21,22 +21,29 @@ export default function generateCharacter(rolesData: Role[], traitsData: Trait[]
   ];
 
   const attributes: Attributes = {
-    forceful: traits.reduce((v, t) => v + getAttributeModifier(t.Stat, "forceful"), 0),
-    tactical: traits.reduce((v, t) => v + getAttributeModifier(t.Stat, "tactical"), 0),
-    creative: traits.reduce((v, t) => v + getAttributeModifier(t.Stat, "creative"), 0),
-    reflexive: traits.reduce((v, t) => v + getAttributeModifier(t.Stat, "reflexive"), 0),
+    forceful: traits.reduce((v, t) => v + (t.Forceful ?? 0), 0),
+    tactical: traits.reduce((v, t) => v + (t.Tactical ?? 0), 0),
+    creative: traits.reduce((v, t) => v + (t.Creative ?? 0), 0),
+    reflexive: traits.reduce((v, t) => v + (t.Reflexive ?? 0), 0),
   };
 
   let hp: number = 6;
-  hp += traits.reduce((v, t) => v + getHPModifier(t.Stat), 0);
+  hp += traits.reduce((v, t) => v + parseDieText(t.MaxHP), 0);
 
-  const inventory = traits.map((t) => t.Item);
+  const inventory: Item[] = [];
+  traits.forEach(({ Item }) => {
+    if (typeof Item === "string") inventory.push({ Text: Item });
+    else if (Array.isArray(Item)) Item.forEach((i) => inventory.push(i));
+    else inventory.push(Item);
+  });
+  inventory.forEach((item) => {
+    if (item.Charges != undefined) {
+      item.MaxCharges = item.Charges;
+    }
+  });
 
-  // TODO
-  const armor = 0;
-
-  // TODO
-  const warDice = 0;
+  const armor = traits.reduce((v, t) => v + (t.Armor ?? 0), 0);
+  const warDice = traits.reduce((v, t) => v + (t.WarDice ?? 0), 0);
 
   return {
     pronouns,
@@ -64,22 +71,18 @@ function getPronouns(gender: Gender) {
   }
 }
 
-// Ideally this would be in the data by default
-function getAttributeModifier(text: string, attribute: keyof Attributes): number {
-  if (text.toLowerCase().includes(attribute)) {
-    return +text.substring(0, 2);
+function parseDieText(text: string | number | undefined): number {
+  if (!text || typeof text === "number" || !text.includes("d")) {
+    return 0;
   }
-  return 0;
-}
-
-// Hard coding? I hardly know her!
-function getHPModifier(text: string): number {
-  if (text.includes("MAX HP") && text.substring(text.length - 2) === "HP") {
-    if (text.substring(0, 4) === "+1D6") {
-      return d6();
-    } else {
-      return +text.substring(0, 2);
-    }
+  let val = 0;
+  const dieIndex = text.indexOf("d");
+  const modIndex = text.indexOf("+");
+  const diceCount = +text.substring(0, dieIndex);
+  const dieSize = modIndex - dieIndex;
+  const modifier = modIndex >= 0 ? +text.substring(modIndex + 1) : 0;
+  for (let i = 0; i < diceCount; i++) {
+    val += d6n(dieSize);
   }
-  return 0;
+  return val + modifier;
 }

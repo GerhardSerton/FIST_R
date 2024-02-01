@@ -49,10 +49,8 @@ export const animals = [
   "Turtle",
   "Weasel",
   "Wombat",
-  "Salamander"
+  "Salamander",
+  "Spider",
 ];
 
-export const nouns = [
-  ...animals,
-
-];
+export const nouns = [...animals];
