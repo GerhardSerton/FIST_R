@@ -16,6 +16,7 @@ import Character, { Role, Trait } from "../../types/character";
 import { CharacterContext, ICharacterContext } from "../../components/Context/CharacterContext";
 import Inventory from "../../components/Inventory/Inventory";
 import Traits from "../../components/Traits/Traits";
+import Profile from "../../components/Profile/Profile";
 
 export function Home() {
   const [charState, setCharState] = useState<Character>(undefined);
@@ -78,7 +79,7 @@ export function Home() {
               <Grid container direction={"column"} className="container">
                 <Grid item xs={5} md={6} className="sector">
                   <SheetSections title="" long={false}>
-                    "auto"
+                    <Profile character={charState} />
                   </SheetSections>
                 </Grid>
                 <Grid item xs={5} md={12} className="sector">
