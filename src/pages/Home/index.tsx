@@ -16,6 +16,8 @@ import Character, { Role, Trait } from "../../types/character";
 import { CharacterContext, ICharacterContext } from "../../components/Context/CharacterContext";
 import Inventory from "../../components/Inventory/Inventory";
 import Traits from "../../components/Traits/Traits";
+import Profile from "../../components/Profile/Profile";
+import RoleBlock from "../../components/Role/Role";
 
 export function Home() {
   const [charState, setCharState] = useState<Character>(undefined);
@@ -78,7 +80,7 @@ export function Home() {
               <Grid container direction={"column"} className="container">
                 <Grid item xs={5} md={6} className="sector">
                   <SheetSections title="" long={false}>
-                    "auto"
+                    <Profile character={charState} />
                   </SheetSections>
                 </Grid>
                 <Grid item xs={5} md={12} className="sector">
@@ -88,10 +90,17 @@ export function Home() {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={12} md={6} className="sector traits">
-              <SheetSections title="Traits" long={true}>
-                <Traits items={charState?.traits ?? []} />
-              </SheetSections>
+            <Grid item container xs={12} md={6} className="container">
+              <Grid item className="sector">
+                <SheetSections title="Traits" long={false}>
+                  <Traits items={charState?.traits ?? []} />
+                </SheetSections>
+              </Grid>
+              <Grid item className="sector">
+                <SheetSections title="Role" long={false}>
+                  <RoleBlock role={charState?.role} />
+                </SheetSections>
+              </Grid>
             </Grid>
           </Grid>
         </div>
