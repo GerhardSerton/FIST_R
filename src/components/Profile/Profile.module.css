@@ -1,0 +1,28 @@
+.portrait {
+  height: auto;
+  width: 100%;
+  border-style: solid;
+}
+
+.parentContainer {
+  flex-grow: 1;
+}
+
+.portraitContainer {
+  width: 15em;
+}
+
+.parentPortraitContainer {
+  justify-content: center;
+  align-content: center;
+}
+
+.details {
+  text-align: left;
+  font-family: "Space Grotesk";
+  font-size: large;
+}
+
+.attributeGrid {
+  justify-content: center;
+}
