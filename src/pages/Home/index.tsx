@@ -18,10 +18,12 @@ import Inventory from "../../components/Inventory/Inventory";
 import Traits from "../../components/Traits/Traits";
 import Profile from "../../components/Profile/Profile";
 import RoleBlock from "../../components/Role/Role";
+import portraitPicker from "../../logic/portraitPicker";
 
 export function Home() {
   const [charState, setCharState] = useState<Character>(undefined);
   const [data, setData] = useState<{ roles: Role[]; traits: Trait[] }>(undefined);
+  const [portrait, setPortrait] = useState<string>("");
   const isReady = useMemo(() => !!charState && !!data, [charState, data]);
   const charProvider = useMemo<ICharacterContext>(
     () => ({ character: charState, setCharacter: setCharState }),
@@ -42,6 +44,7 @@ export function Home() {
         const traits = await respTrait.json();
         setData({ roles, traits });
         setCharState(generateCharacter(roles, traits));
+        setPortrait(portraitPicker());
       } catch (e) {
         console.error(e);
       }
@@ -71,6 +74,7 @@ export function Home() {
                 disabled={!isReady}
                 onClick={() => {
                   setCharState(generateCharacter(data.roles, data.traits));
+                  setPortrait(portraitPicker);
                 }}
               />
             </Grid>
@@ -80,7 +84,7 @@ export function Home() {
               <Grid container direction={"column"} className="container">
                 <Grid item xs={5} md={6} className="sector">
                   <SheetSections title="" long={false}>
-                    <Profile character={charState} />
+                    <Profile character={charState} portrait={portrait} />
                   </SheetSections>
                 </Grid>
                 <Grid item xs={5} md={12} className="sector">

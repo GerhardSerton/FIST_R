@@ -1,11 +1,11 @@
 import { Grid } from "@mui/material";
 import Character from "../../types/character";
 import styles from "./Profile.module.css";
-import agent1 from "../../assets/portraits/agent1.png";
 import Attribute from "./Attribute/Attribute";
 
 interface ProfileProps {
   character: Character;
+  portrait: string;
 }
 
 export default function Profile(props: ProfileProps) {
@@ -22,12 +22,12 @@ export default function Profile(props: ProfileProps) {
   return (
     <Grid container className={styles.parentContainer}>
       <Grid container item>
-        <Grid item container md={5} className={styles.parentPortraitContainer}>
+        <Grid item container md={3} className={styles.parentPortraitContainer}>
           <Grid item className={styles.portraitContainer}>
-            <img className={styles.portrait} src={agent1} />
+            <img className={styles.portrait} src={props.portrait} />
           </Grid>
         </Grid>
-        <Grid item container md={7}>
+        <Grid item container md={9}>
           <Grid item container>
             <Grid item md={6} className={styles.details}>
               Name:
