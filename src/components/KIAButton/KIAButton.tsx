@@ -1,5 +1,4 @@
-import * as React from "react";
-import fistLogo from "../../assets/FIST Logo.png";
+//import fistLogo from "assets/FIST Logo.png";
 import Button from "@mui/material/Button";
 import styles from "./KIAButton.module.css";
 import { useState } from "react";
@@ -19,7 +18,7 @@ export default function KIAButton(props: KIAButtonProps) {
         K.I.A.
       </Button>
       <img
-        src={fistLogo}
+        src={"assets/FIST Logo.png"}
         alt="Preact logo"
         className={styles.fistLogoImage}
         onMouseOver={() => {

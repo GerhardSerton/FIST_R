@@ -1,11 +1,9 @@
-import fistLogo from "../../assets/FIST Logo.png";
 import "./style.css";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { useEffect, useMemo, useState } from "react";
-import Button from "@mui/material/Button";
 
 import KIAButton from "../../components/KIAButton/KIAButton";
 import { Grid } from "@mui/material";

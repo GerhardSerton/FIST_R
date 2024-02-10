@@ -1,86 +1,84 @@
-@import url('https://fonts.googleapis.com/css?family=Space+Grotesk');
-@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text');
+@import url("https://fonts.googleapis.com/css?family=Space+Grotesk");
+@import url("https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text");
 
 @font-face {
-	font-family: "Microgramma D Extended";
-	src: local("Microgramma"),
-		url('./assets/fonts/Microgramma.otf') format("opentype");
-	font-weight: normal;
-   }
+  font-family: "Microgramma D Extended";
+  src: local("Microgramma"), url("assets/fonts/Microgramma.otf") format("opentype");
+  font-weight: normal;
+}
 
 @font-face {
-	font-family: "Evolventa";
-	src: local("Evolventa"),
-		url('./assets/fonts/Evolventa-Regular.otf') format("opentype");
-	font-weight: normal;
+  font-family: "Evolventa";
+  src: local("Evolventa"), url("assets/fonts/Evolventa-Regular.otf") format("opentype");
+  font-weight: normal;
 }
 
 :root {
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-	line-height: 1.5;
-	font-weight: 400;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
 
-	color: #222;
-	background-color: #ffffff;
+  color: #222;
+  background-color: #ffffff;
 
-	font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-text-size-adjust: 100%;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-	margin: 0;
-	font-family: 'Microgramma D Extended';
+  margin: 0;
+  font-family: "Microgramma D Extended";
 }
 
 #app {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
-	display: flex;
-	justify-content: flex-end;
-	background-color: #673ab8;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #673ab8;
 }
 
 header nav {
-	display: flex;
+  display: flex;
 }
 
 header a {
-	color: #fff;
-	padding: 0.75rem;
-	text-decoration: none;
+  color: #fff;
+  padding: 0.75rem;
+  text-decoration: none;
 }
 
 header a.active {
-	background-color: #0005;
+  background-color: #0005;
 }
 
 header a:hover {
-	background-color: #0008;
+  background-color: #0008;
 }
 
 main {
-	flex: auto;
-	display: flex;
-	align-items: center;
-	text-align: center;
+  flex: auto;
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 @media (max-width: 639px) {
-	main {
-		margin: 2rem;
-	}
+  main {
+    margin: 2rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {
-		color: #ccc;
-		background-color: #000000;
-	}
+  :root {
+    color: #ccc;
+    background-color: #000000;
+  }
 }
