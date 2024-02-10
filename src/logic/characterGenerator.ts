@@ -58,7 +58,7 @@ export default function generateCharacter(rolesData: Role[], traitsData: Trait[]
     warDice,
   };
 
-  character = selectStartingBonus(character);
+  selectStartingBonus(character);
 
   return character;
 }
