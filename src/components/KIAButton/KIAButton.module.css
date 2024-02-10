@@ -1,27 +1,33 @@
 .fistLogoImage {
-	width: auto;
-	height: 10em;
+  width: auto;
+  height: 10em;
 }
 
 .kiaButton {
-	position: absolute !important;
-	z-index: 1000;
-	padding: 5px;
-	font-weight: bold;
-	background-color: #000 !important;
-	outline-color: white !important;
-	outline-width: 3px !important;
-	outline-style: solid !important;
+  position: absolute !important;
+  z-index: 1000;
+  padding: 5px;
+  font-weight: bold;
+  background-color: #000 !important;
+  outline-color: white !important;
+  outline-width: 3px !important;
+  outline-style: solid !important;
 }
 .kiaButton .hidden {
-	display: none !important;
+  display: none !important;
 }
 
 .kiaContainer {
-    width: 200px;
-    height: 200px;
-    position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (prefers-color-scheme: light) {
+  .fistLogoImage {
+    filter: invert(1);
+  }
 }
