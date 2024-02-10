@@ -1,5 +1,1 @@
-export const adverbs = [
-  "Running",
-  "Flying",
-  "Quasi",
-];
+export const adverbs = ["Running", "Flying", "Quasi"];

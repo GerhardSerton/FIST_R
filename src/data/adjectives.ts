@@ -1,19 +1,5 @@
-const colours = [
-  "Black",
-  "White",
-  "Red",
-  "Blue",
-  "Maroon"
-];
+const colours = ["Black", "White", "Red", "Blue", "Maroon"];
 
-const statesOfMatter = [
-  "Solid",
-  "Liquid",
-  "Gaseous",
-  "Plasmoid"
-];
+const statesOfMatter = ["Solid", "Liquid", "Gaseous", "Plasmoid"];
 
-export const adjectives = [
-  ...colours,
-  ...statesOfMatter,
-];
+export const adjectives = [...colours, ...statesOfMatter];
