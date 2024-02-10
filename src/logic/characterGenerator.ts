@@ -1,5 +1,5 @@
 import Character, { Attributes, Item, Role, Trait } from "../types/character";
-import { d66, d666, d6n } from "./diceRoller";
+import { d66, d666, d6n, d6 } from "./diceRoller";
 import getName, { Gender, pickGender } from "./nameGenerator";
 
 export default function generateCharacter(rolesData: Role[], traitsData: Trait[]): Character {
@@ -45,7 +45,7 @@ export default function generateCharacter(rolesData: Role[], traitsData: Trait[]
   const armor = traits.reduce((v, t) => v + (t.Armor ?? 0), 0);
   const warDice = traits.reduce((v, t) => v + (t.WarDice ?? 0), 0);
 
-  return {
+  let character = {
     pronouns,
     name,
     role,
@@ -57,6 +57,10 @@ export default function generateCharacter(rolesData: Role[], traitsData: Trait[]
     armor,
     warDice,
   };
+
+  character = selectStartingBonus(character);
+
+  return character;
 }
 
 function getPronouns(gender: Gender) {
@@ -85,4 +89,66 @@ function parseDieText(text: string | number | undefined): number {
     val += d6n(dieSize);
   }
   return val + modifier;
+}
+
+function selectStartingBonus(character: Character): Character {
+  const bonusRoll = Math.ceil(d6() / 2);
+  switch (bonusRoll) {
+    case 1:
+      character.inventory.push(selectStartingEquipment());
+      break;
+    case 2:
+      character.maxHp += d6();
+      character.hp = character.maxHp;
+      break;
+    case 3:
+    default:
+      character.warDice += d6();
+      break;
+  }
+
+  return character;
+}
+
+function selectStartingEquipment(): Item {
+  const balaclava: Item = {
+    Text: "Balaclava (hides identity)",
+  };
+  const flashlight: Item = {
+    Text: "Flashlight (can be used as a weapon attachment)",
+  };
+  const knife: Item = {
+    Text: "Knife (1D6 DAMAGE)",
+    Damage: "1D6",
+  };
+  const mre: Item = {
+    Text: "MRE field rations (+1D6 HP, one use)",
+    Heal: "1D6",
+    Charges: 1,
+    MaxCharges: 1,
+  };
+  const pistol: Item = {
+    Text: "Pistol (1D6 DAMAGE)",
+    Damage: "1D6",
+  };
+  const riotShield: Item = {
+    Text: "Riot shield (1 ARMOR, equip as weapon)",
+    Armor: 1,
+  };
+  const roll = d6();
+  switch (roll) {
+    case 1:
+      return balaclava;
+    case 2:
+      return flashlight;
+    case 3:
+      return knife;
+    case 4:
+      return mre;
+    case 5:
+      return pistol;
+    case 6:
+    default:
+      return riotShield;
+  }
 }
