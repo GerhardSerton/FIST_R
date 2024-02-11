@@ -74,31 +74,25 @@ export function Home() {
             </Grid>
           </Grid>
           <Grid container direction={"row"} className="container">
-            <Grid item xs={12} md={6}>
-              <Grid container direction={"column"} className="container">
-                <Grid item xs={5} md={6} className="sector">
-                  <SheetSections title="" long={false}>
-                    <Profile character={charState} portrait={portrait} />
-                  </SheetSections>
-                </Grid>
-                <Grid item xs={5} md={12} className="sector">
-                  <SheetSections title="Inventory" long={false}>
-                    <Inventory items={charState?.inventory ?? []} />
-                  </SheetSections>
-                </Grid>
-              </Grid>
+            <Grid item lg={6} md={12} className="sector">
+              <SheetSections title="" long={false}>
+                <Profile character={charState} portrait={portrait} />
+              </SheetSections>
             </Grid>
-            <Grid item container xs={12} md={6} className="container">
-              <Grid item className="sector">
-                <SheetSections title="Traits" long={false}>
-                  <Traits items={charState?.traits ?? []} />
-                </SheetSections>
-              </Grid>
-              <Grid item className="sector">
-                <SheetSections title="Role" long={false}>
-                  <RoleBlock role={charState?.role} />
-                </SheetSections>
-              </Grid>
+            <Grid item lg={6} md={12} className="sector">
+              <SheetSections title="Inventory" long={false}>
+                <Inventory items={charState?.inventory ?? []} />
+              </SheetSections>
+            </Grid>
+            <Grid item lg={6} md={12} className="sector">
+              <SheetSections title="Traits" long={false}>
+                <Traits items={charState?.traits ?? []} />
+              </SheetSections>
+            </Grid>
+            <Grid item lg={6} md={12} className="sector">
+              <SheetSections title="Role" long={false}>
+                <RoleBlock role={charState?.role} />
+              </SheetSections>
             </Grid>
           </Grid>
         </div>

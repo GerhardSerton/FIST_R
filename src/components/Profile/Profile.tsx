@@ -29,22 +29,22 @@ export default function Profile(props: ProfileProps) {
         </Grid>
         <Grid item container md={9}>
           <Grid item container>
-            <Grid item md={6} className={styles.details}>
+            <Grid item sm={6} md={6} className={styles.details}>
               Name:
             </Grid>
-            <Grid item md={6} className={styles.details}>
+            <Grid item sm={6} md={6} className={styles.details}>
               {props?.character?.name ?? ""}
             </Grid>
-            <Grid item md={6} className={styles.details}>
+            <Grid item sm={6} md={6} className={styles.details}>
               Pronouns:
             </Grid>
-            <Grid item md={6} className={styles.details}>
+            <Grid item sm={6} md={6} className={styles.details}>
               {props?.character?.pronouns ?? ""}
             </Grid>
-            <Grid item md={6} className={styles.details}>
+            <Grid item sm={6} md={6} className={styles.details}>
               Role:
             </Grid>
-            <Grid item md={6} className={styles.details}>
+            <Grid item sm={6} md={6} className={styles.details}>
               {props?.character?.role.Name ?? ""}
             </Grid>
           </Grid>
