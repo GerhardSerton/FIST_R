@@ -94,6 +94,16 @@ export function Home() {
                 <RoleBlock role={charState?.role} />
               </SheetSections>
             </Grid>
+            <Grid item lg={12} md={12} className="sector">
+              <div className="footer">
+                Heavily inspired by{" "}
+                <a href={"https://scvmbirther.makedatanotlore.dev/"}>SCVMBIRTHER</a>, hopefully
+                we'll be as pretty some day. Made for{" "}
+                <a href={"https://itch.io/jam/fist-jam-ops-iv"}>FIST Jam Ops IV</a>, Full credits at
+                our <a href={"https://bewildebeest.itch.io/fist-r"}>itch.io page</a>. Best used in
+                landscape.
+              </div>
+            </Grid>
           </Grid>
         </div>
       </div>
