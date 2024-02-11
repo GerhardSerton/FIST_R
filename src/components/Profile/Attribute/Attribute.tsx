@@ -9,12 +9,12 @@ interface AttributeProps {
 
 export default function Attribute(props: AttributeProps) {
   return (
-    <Grid container direction={"row"} className={styles.parentContainer} spacing={2}>
-      <Grid item container direction={"column"} md={9} className={styles.textContainer}>
+    <Grid container direction={"row"} className={styles.parentContainer} spacing={1}>
+      <Grid item container direction={"column"} md={10} className={styles.textContainer}>
         <Grid className={styles.name}>{props.name}</Grid>
         <Grid className={styles.description}>{props.description}</Grid>
       </Grid>
-      <Grid item md={3}>
+      <Grid item md={2}>
         <div className={styles.value}>
           <div>{props.value}</div>
         </div>

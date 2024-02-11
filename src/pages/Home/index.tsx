@@ -55,12 +55,12 @@ export function Home() {
 
   return (
     <CharacterContext.Provider value={charProvider}>
-      <div class="home">
-        <Grid container className="sideLogo">
-          <Grid direction={"column"} xs={12} className="sideLogoItem">
-            <Barcode />
-          </Grid>
+      <Grid container className="sideLogo">
+        <Grid direction={"column"} xs={12} className="sideLogoItem">
+          <Barcode />
         </Grid>
+      </Grid>
+      <div class="home">
         <div class="sector traits">
           <Grid container>
             <Grid item xs={12}>
