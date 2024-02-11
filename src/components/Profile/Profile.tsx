@@ -22,12 +22,12 @@ export default function Profile(props: ProfileProps) {
   return (
     <Grid container className={styles.parentContainer}>
       <Grid container item>
-        <Grid item container md={3} className={styles.parentPortraitContainer}>
+        <Grid item container md={12} lg={3} className={styles.parentPortraitContainer}>
           <Grid item className={styles.portraitContainer}>
             <img className={styles.portrait} src={props.portrait} />
           </Grid>
         </Grid>
-        <Grid item container md={9}>
+        <Grid item container md={12} lg={9}>
           <Grid item container>
             <Grid item sm={6} md={6} className={styles.details}>
               Name:
@@ -49,28 +49,28 @@ export default function Profile(props: ProfileProps) {
             </Grid>
           </Grid>
           <Grid item container direction={"row"} className={styles.attributeGrid} columnSpacing={4}>
-            <Grid item md={6}>
+            <Grid item md={12} lg={6}>
               <Attribute
                 name={"FORCEFUL"}
                 description={forcefulDesc}
                 value={props?.character?.attributes.forceful ?? 0}
               />
             </Grid>
-            <Grid item md={6}>
+            <Grid item md={12} lg={6}>
               <Attribute
                 name={"TACTICAL"}
                 description={tacticalDesc}
                 value={props?.character?.attributes.tactical ?? 0}
               />
             </Grid>
-            <Grid item md={6}>
+            <Grid item md={12} lg={6}>
               <Attribute
                 name={"CREATIVE"}
                 description={creativeDesc}
                 value={props?.character?.attributes.creative ?? 0}
               />
             </Grid>
-            <Grid item md={6}>
+            <Grid item md={12} lg={6}>
               <Attribute
                 name={"REFLEXIVE"}
                 description={reflexiveDesc}
@@ -78,28 +78,28 @@ export default function Profile(props: ProfileProps) {
               />
             </Grid>
             <Grid item md={12} />
-            <Grid item md={6}>
+            <Grid item md={12} lg={6}>
               <Attribute
                 name={"ARMOR"}
                 description={armorDesc}
                 value={props?.character?.armor ?? 0}
               />
             </Grid>
-            <Grid item md={6}>
+            <Grid item md={12} lg={6}>
               <Attribute
                 name={"MAX HP"}
                 description={maxHpDesc}
                 value={props?.character?.maxHp ?? 0}
               />
             </Grid>
-            <Grid item md={6}>
+            <Grid item md={12} lg={6}>
               <Attribute
                 name={"WAR DICE"}
                 description={warDiceDesc}
                 value={props?.character?.warDice ?? 0}
               />
             </Grid>
-            <Grid item md={6}>
+            <Grid item md={12} lg={6}>
               <Attribute name={"HP"} description={hpDesc} value={props?.character?.hp ?? 0} />
             </Grid>
           </Grid>
